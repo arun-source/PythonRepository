@@ -12,7 +12,17 @@ pipeline {
 	        sh 'docker build -t mymlmodel:v1 .'
 	        }
 	   }
-	   stage('Deploy ML Model AS Docker Container In Docker Deployment Server') {
+             stage('Docker Login and Push') {
+	        steps {
+		withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIAL', variable: 'DockerHubPwd')]) {
+			sh 'docker login -u 111992 -p ${DockerHubPwd}'	
+                     }	
+		      sh 'docker push mymlmodel:v1'
+	        }
+	   }		    
+		    
+		    
+	/*   stage('Deploy ML Model AS Docker Container In Docker Deployment Server') {
 	        steps {
 		  sshagent(['Docker_Dev_Server_SSH']) {
 			  
@@ -29,6 +39,6 @@ pipeline {
 	        steps {
 	            echo 'Testing..'
 	            }
-	   }
+	   } */
     }
 }

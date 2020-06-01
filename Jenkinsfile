@@ -9,7 +9,7 @@ pipeline {
 	   }
 	   stage('Build docker Image') {
 	        steps {
-	        sh 'docker build -t mymlmodel:v1 .'
+	        sh 'docker build -t 111992/mymlmodel:v1 .'
 	        }
 	   }
              stage('Docker Login and Push') {
@@ -17,7 +17,7 @@ pipeline {
 		withCredentials([string(credentialsId: 'HUB_Credential', variable: 'Hubpwd')]) {
 			sh 'docker login -u 111992 -p ${Hubpwd}'	
                      }	
-		     sh 'docker push mymlmodel:v1'
+		     sh 'docker push 111992/mymlmodel:v1'
 	        }
 	   }		    
 		    

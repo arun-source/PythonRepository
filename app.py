@@ -47,7 +47,7 @@ from sklearn.model_selection import train_test_split
 ## Using Classifier
 clf = LogisticRegression(C=0.1, class_weight=None, dual=False, fit_intercept=True,
                    intercept_scaling=1, l1_ratio=None, max_iter=100,
-                   multi_class='warn', n_jobs=None, penalty='l2',
+                   multi_class='multinomial', n_jobs=None, penalty='l2',
                    random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
                    warm_start=False)
 clf.fit(X,y)

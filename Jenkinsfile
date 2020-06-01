@@ -16,7 +16,7 @@ pipeline {
 	        steps {
 		  sshagent(['Docker_Dev_Server_SSH']) {
 			  
-		    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.14.22 docker rm -f mlmodelcontainer || true'
+		 //   sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.14.22 docker rm -f mlmodelcontainer || true'
 			  
 		    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.14.22 docker run -d -p 5000:4000 --name mlmodelcontainer mymlmodel:v1'
 			  

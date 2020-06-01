@@ -14,8 +14,8 @@ pipeline {
 	   }
              stage('Docker Login and Push') {
 	        steps {
-		withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIAL', variable: 'DockerHubPwd')]) {
-			sh 'docker login -u 111992 -p ${DockerHubPwd}'	
+		withCredentials([string(credentialsId: 'HUB_Credential', variable: 'Hubpwd')]) {
+			sh 'docker login -u 111992 -p ${Hubpwd}'	
                      }	
 		      sh 'docker push mymlmodel:v1'
 	        }

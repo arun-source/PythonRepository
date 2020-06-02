@@ -40,7 +40,7 @@ pipeline {
 	        emailext body: '''Hi Team,
                 Regards,
                 Arun Kumar''', subject: 'Send Email', to: 'yarunkumar92@gmail.com'
-	            }
+	           }
 	   }
     }
 }

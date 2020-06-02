@@ -35,10 +35,12 @@ pipeline {
                       }
 	        }
 	   } 
-	/*   stage('Testing'){
+	  stage('Sending failure Email'){
 	        steps {
-	            echo 'Testing..'
+	        emailext body: '''Hi Team,
+                Regards,
+                Arun Kumar''', subject: 'Send Email', to: 'yarunkumar92@gmail.com'
 	            }
-	   } */ 
+	   }
     }
 }

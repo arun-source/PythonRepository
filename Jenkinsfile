@@ -22,7 +22,7 @@ pipeline {
 	   }		    
 		    
 		    
-	   stage('Deploy ML Model AS Docker Container In Docker Deployment Server') {
+	   stage('Deploying Container In Docker Deployment Server') {
 	        steps {
 		  sshagent(['Docker_Dev_Server_SSH']) {
 			  
@@ -35,7 +35,7 @@ pipeline {
                       }
 	        }
 	   } 
-	  stage('Sending failure Email'){
+	  stage('Sending Email'){
 	        steps {
 	        emailext body: '''Hi Team,
                 Regards,

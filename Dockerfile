@@ -16,5 +16,4 @@ EXPOSE 4000
 
 ENTRYPOINT  ["python"]
 
-
 CMD ["app.py"]
